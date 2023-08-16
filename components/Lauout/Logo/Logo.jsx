@@ -3,7 +3,7 @@ import s from './Logo.module.css'
 
 const Logo = () => {
   return (
-    <div className={s.logo}>Bogdan's Next.js Blog</div>
+    <div className={s.logo}>Bogdan's Next Blog</div>
   );
 };
 

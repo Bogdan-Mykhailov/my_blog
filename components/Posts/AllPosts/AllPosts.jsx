@@ -1,16 +1,16 @@
 import React from 'react';
-import s from './FeaturedPosts.module.css';
+import s from './AllPosts.module.css'
 import PostsGrid from "@/components/Posts/PostGrid/PostsGrid";
 
-const FeaturedPosts = (props) => {
+const AllPosts = (props) => {
   const { posts } = props;
 
   return (
-    <section className={s.latest}>
-      <h2>Featured Posts</h2>
+    <section className={s.posts}>
+      <h1>All Posts</h1>
       <PostsGrid posts={posts}/>
     </section>
   );
 };
 
-export default FeaturedPosts;
+export default AllPosts;

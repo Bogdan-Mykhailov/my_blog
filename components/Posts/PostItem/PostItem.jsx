@@ -13,18 +13,18 @@ const PostItem = (props) => {
   })
 
   const imagePosts = `/images/posts/${slug}/${image}`;
-  const linkPath = `/post/${slug}`;
+  const linkPath = `/posts/${slug}`;
 
   return (
     <li className={s.post}>
       <Link href={linkPath}>
         <div className={s.image}>
           <Image
+            style={{ width: '100%', height: 'auto' }}
             src={imagePosts}
             alt={title}
             width={300}
             height={200}
-            layout="responsive"
             priority={true}
           />
         </div>
