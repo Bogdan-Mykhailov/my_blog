@@ -4,13 +4,15 @@ import PostHeader from "@/components/Posts/PostDetail/PostHeader/PostHeader";
 import {DUMMY_POST_1} from "@/data";
 import ReactMarkdown from "react-markdown";
 
-const PostContent = () => {
-  const imagePath = `/images/posts/${DUMMY_POST_1.slug}/${DUMMY_POST_1.image}`
+const PostContent = (props) => {
+  const { title, content, image, slug } = props.post;
+
+  const imagePath = `/images/posts/${slug}/${image}`
 
   return (
     <article className={s.content}>
-      <PostHeader title={DUMMY_POST_1.title} image={imagePath}/>
-      <ReactMarkdown>{DUMMY_POST_1.content}</ReactMarkdown>
+      <PostHeader title={title} image={imagePath}/>
+      <ReactMarkdown>{content}</ReactMarkdown>
     </article>
   );
 };

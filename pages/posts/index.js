@@ -1,11 +1,23 @@
 import React from 'react';
 import AllPosts from "@/components/Posts/AllPosts/AllPosts";
-import {DUMMY_POST} from "@/data";
+import {getFeaturedPosts} from "@/helpers/post-utils";
 
-const AllPostsPage = () => {
+const AllPostsPage = (props) => {
+  const { posts } = props;
+
   return (
-    <AllPosts posts={DUMMY_POST}/>
+    <AllPosts posts={posts}/>
   );
+};
+
+export const getStaticProps = () => {
+  const posts = getFeaturedPosts();
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default AllPostsPage;
