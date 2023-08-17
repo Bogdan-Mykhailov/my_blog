@@ -7,8 +7,8 @@ const nextConfig = (phase) => {
     return {
       reactStrictMode: true,
       env: {
-        db_username: process.env.USERNAME,
-        db_pass: process.env.PASSWORD,
+        db_username: 'bogdan',
+        db_pass: '38VkDgpeclNwvQK8',
         db_clustername: 'cluster0',
         db_key: 'my-site-dev'
       }
@@ -17,8 +17,8 @@ const nextConfig = (phase) => {
 
   return {
     env: {
-      db_username: process.env.USERNAME,
-      db_pass: process.env.PASSWORD,
+      db_username: 'bogdan',
+      db_pass: '38VkDgpeclNwvQK8',
       db_clustername: 'cluster0',
       db_key: 'my-site'
     }

@@ -4,16 +4,16 @@ import {getPostData, getPostsFiles} from "@/helpers/post-utils";
 import Head from "next/head";
 
 const PostDetailPage = (props) => {
-  const { post } = props;
-  const { title, excerpt } = post;
+  const {post} = props;
+  const {title, excerpt} = post;
 
   return (
     <>
-    <Head>
-      <title>{title}</title>
-      <meta name="description" content={excerpt}/>
-    </Head>
-      <PostContent post={post} />
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={excerpt}/>
+      </Head>
+      <PostContent post={post}/>
     </>
   );
 };
@@ -37,7 +37,7 @@ export const getStaticPaths = () => {
   const slugs = postFileNames.map(fileName => fileName.replace(/\.md$/, ''));
 
   return {
-    paths: slugs.map(slug => ({ params: { slug } })),
+    paths: slugs.map(slug => ({params: {slug}})),
     fallback: false,
   }
 }
