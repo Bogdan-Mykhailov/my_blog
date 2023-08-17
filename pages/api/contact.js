@@ -1,5 +1,5 @@
-import {MongoClient} from "mongodb";
-import {NAME, URL} from "@/constants";
+import { MongoClient } from "mongodb";
+import { NAME, URL } from "@/constants";
 
 
 const handler = async (req, res) => {
