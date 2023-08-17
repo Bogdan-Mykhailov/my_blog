@@ -1,6 +1,6 @@
 import React from 'react';
-import ContactForm from "@/components/contact/ContactForm";
 import Head from "next/head";
+import ContactForm from "@/components/Contact/ContactForm";
 
 const ContactPage = () => {
   return <>
