@@ -1,8 +1,9 @@
 import s from './Notification.module.css';
 import {STATUS} from "@/constants";
+import ReactDom from "react-dom";
 
 const Notification = (props) => {
-  const { title, message, status } = props;
+  const {title, message, status} = props;
 
   let statusClasses = '';
 
@@ -16,11 +17,12 @@ const Notification = (props) => {
 
   const cssClasses = `${s.notification} ${statusClasses}`;
 
-  return (
+  return ReactDom.createPortal(
     <div className={cssClasses}>
       <h2>{title}</h2>
       <p>{message}</p>
-    </div>
+    </div>,
+    document.getElementById('notifications')
   );
 };
 
