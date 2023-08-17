@@ -13,7 +13,7 @@ const MainNavigation = () => {
       <nav>
         <menu>
           <li><Link href="/posts">Posts</Link></li>
-          <li><Link href="/pages/contact">Contact</Link></li>
+          <li><Link href="/contact">Contact</Link></li>
         </menu>
       </nav>
     </header>

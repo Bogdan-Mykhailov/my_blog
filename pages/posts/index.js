@@ -1,6 +1,6 @@
 import React from 'react';
 import AllPosts from "@/components/Posts/AllPosts/AllPosts";
-import {getFeaturedPosts} from "@/helpers/post-utils";
+import { getAllPosts } from "@/helpers/post-utils";
 
 const AllPostsPage = (props) => {
   const { posts } = props;
@@ -11,7 +11,7 @@ const AllPostsPage = (props) => {
 };
 
 export const getStaticProps = () => {
-  const posts = getFeaturedPosts();
+  const posts = getAllPosts();
 
   return {
     props: {
