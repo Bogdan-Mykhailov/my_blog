@@ -1,6 +1,5 @@
 import { MongoClient } from "mongodb";
-import { NAME, URL } from "@/constants";
-
+import { CONNECTION_STRING } from "@/constants";
 
 const handler = async (req, res) => {
   if (req.method === 'POST') {
@@ -27,13 +26,13 @@ const handler = async (req, res) => {
     let client;
 
     try {
-      client = await MongoClient.connect(URL)
+      client = await MongoClient.connect(CONNECTION_STRING)
     } catch (err) {
       res.status(500).json({message: err.message || 'Could not connect to database.'})
       return;
     }
 
-    const db = client.db(NAME);
+    const db = client.db(process.env.db_key);
 
     try {
       const result = await db.collection('messages').insertOne(newMessage);

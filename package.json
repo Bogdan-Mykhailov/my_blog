@@ -6,7 +6,8 @@
     "dev": "env-cmd -f .env.local next dev",
     "build": "env-cmd -f .env.local next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next export"
   },
   "dependencies": {
     "env-cmd": "^10.1.0",

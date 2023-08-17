@@ -2,6 +2,7 @@ import React from 'react';
 import s from './PostItem.module.css';
 import Link from "next/link";
 import Image from 'next/image';
+import {PATH} from "@/constants";
 
 const PostItem = (props) => {
   const { title, image, excerpt, date, slug } = props.post;
@@ -12,8 +13,8 @@ const PostItem = (props) => {
     year: "numeric"
   })
 
-  const imagePosts = `/images/posts/${slug}/${image}`;
-  const linkPath = `/posts/${slug}`;
+  const imagePosts = `${PATH.IMAGES}${PATH.POSTS}/${slug}/${image}`;
+  const linkPath = `${PATH.POSTS}/${slug}`;
 
   return (
     <li className={s.post}>

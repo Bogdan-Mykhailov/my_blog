@@ -5,25 +5,26 @@ import ReactMarkdown from "react-markdown";
 import Image from "next/image";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { atomDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { PATH } from "@/constants";
 
 const PostContent = (props) => {
   const {title, content, image, slug} = props.post;
 
-  const imagePath = `/images/posts/${slug}/${image}`;
+  const imagePath = `${PATH.IMAGES}${PATH.POSTS}/${slug}/${image}`;
 
   const customRenderers = {
-    // img(image) {
-    //   return (
-    //     <Image
-    //       style={{ width: '100%', height: 'auto'}}
-    //       src={`/images/posts/${slug}/${image.src}`}
-    //       alt={image.properties.alt}
-    //       width={600}
-    //       height={300}
-    //       priority={true}
-    //     />
-    //   );
-    // },
+    img(image) {
+      return (
+        <Image
+          style={{ width: '100%', height: 'auto'}}
+          src={`${PATH.IMAGES}${PATH.POSTS}/${slug}/${image.src}`}
+          alt={image.properties.alt}
+          width={600}
+          height={300}
+          priority={true}
+        />
+      );
+    },
     p(paragraph) {
       const {node} = paragraph;
 
@@ -34,7 +35,7 @@ const PostContent = (props) => {
           <div className={s.image}>
             <Image
               style={{ width: '100%', height: 'auto'}}
-              src={`/images/posts/${slug}/${image.properties.src}`}
+              src={`${PATH.IMAGES}${PATH.POSTS}/${slug}/${image.properties.src}`}
               alt={image.properties.alt}
               width={600}
               height={300}
